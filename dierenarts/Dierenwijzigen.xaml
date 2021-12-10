@@ -1,0 +1,23 @@
+﻿<Window x:Class="dierenarts.Dierenwijzigen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dierenarts"
+        mc:Ignorable="d"
+        Title="Dierenwijzigen" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="hond.jpg"/>
+        </Grid.Background>
+        <Label Content="                                 Dieren wijzigen " VerticalAlignment="Top" Height="66" Margin="-2,0,-0.4,0" Background="#FF080808" Foreground="White" FontSize="36"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="0,393,-0.4,0" VerticalAlignment="Top" Height="27" Width="794" Background="Black"/>
+        <Label Content="Naam:" HorizontalAlignment="Left" Margin="54,96,0,0" VerticalAlignment="Top" Height="28" Width="51" Foreground="White"/>
+        <TextBox x:Name="txtnaam" HorizontalAlignment="Left" Height="23" Margin="126,96,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Background="{x:Null}" Foreground="White" BorderBrush="#FFFDFDFF"/>
+        <Label Content="Diersoort:" HorizontalAlignment="Left" Margin="43,130,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="txtdiersoort" HorizontalAlignment="Left" Height="23" Margin="126,133,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="White" Foreground="White"/>
+        <Button x:Name="btnopslaan" Content="Opslaan" HorizontalAlignment="Left" Margin="171,182,0,0" VerticalAlignment="Top" Width="75" Foreground="Black" BorderBrush="{x:Null}" Background="White" Click="btnopslaan_Click"/>
+        <Button x:Name="btnterug" Content="Terug naar het menu " HorizontalAlignment="Left" Margin="633,10,0,0" VerticalAlignment="Top" Width="151" Height="56" Background="White" BorderBrush="White" Click="btnterug_Click"/>
+
+    </Grid>
+</Window>

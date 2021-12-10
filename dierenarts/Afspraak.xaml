@@ -1,0 +1,52 @@
+﻿<Window x:Class="dierenarts.Afspraak"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:dierenarts"
+        mc:Ignorable="d"
+        Title="Afspraak" Height="450" Width="800">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="hond.jpg"/>
+        </Grid.Background>
+        <ComboBox x:Name="combodier" HorizontalAlignment="Left" Margin="100,143,0,0" VerticalAlignment="Top" Width="120" DisplayMemberPath="naam"/>
+        <DatePicker x:Name="dpafspraak" HorizontalAlignment="Left" Margin="118,216,0,0" VerticalAlignment="Top" Height="26"/>
+        <TextBox x:Name="txtafspraaksoort" HorizontalAlignment="Left" Height="23" Margin="100,267,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="White" Foreground="White"/>
+        <Label Content="afspraak soort" HorizontalAlignment="Left" Margin="2,264,0,0" VerticalAlignment="Top" Background="#00000000" Foreground="White"/>
+        <Button x:Name="btnopslaan" Content="opslaan" HorizontalAlignment="Left" Margin="145,314,0,0" VerticalAlignment="Top" Width="75" Background="White" BorderBrush="White" Click="btnopslaan_Click"/>
+        <Label Content="Diernaam" HorizontalAlignment="Left" Margin="10,143,0,0" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="0.549,0.863"/>
+        <Label Content="Datum afspraak" HorizontalAlignment="Left" Margin="2,216,0,0" VerticalAlignment="Top" Width="93" Foreground="White"/>
+        <Label Content="                                  Afspraak" VerticalAlignment="Top" Height="66" Margin="-2,0,-0.4,0" Background="#FF080808" Foreground="White" FontSize="36"/>
+        <Label Content="" HorizontalAlignment="Left" Margin="0,393,-0.4,0" VerticalAlignment="Top" Height="27" Width="794" Background="Black"/>
+        <DataGrid x:Name="dgafspraak" HorizontalAlignment="Left" Height="202" Margin="388,143,0,0" VerticalAlignment="Top" Width="344" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding dier.naam}" ClipboardContentBinding="{x:Null}" Header="Diernaam"/>
+                <DataGridTextColumn Binding="{Binding datum}" ClipboardContentBinding="{x:Null}" Header="Afspraak datum "/>
+                <DataGridTextColumn Binding="{Binding tijd}" ClipboardContentBinding="{x:Null}" Header="Tijd"/>
+                <DataGridTextColumn Binding="{Binding afspraaksoort }" ClipboardContentBinding="{x:Null}" Header="Afspraaksoort"/>
+                <DataGridTemplateColumn >
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button x:Name="btnwijzig" Content="Wijzig" Click="btnwijzig_Click"/>
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+                <DataGridTemplateColumn >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btnverwijderen" Content="Verwijderen" Click="btnverwijderen_Click"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Tijd:" HorizontalAlignment="Left" Margin="10,174,0,0" VerticalAlignment="Top" Foreground="White"/>
+        <TextBox x:Name="txttijd" HorizontalAlignment="Left" Height="23" Margin="100,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Background="{x:Null}" BorderBrush="White" Foreground="White"/>
+        <DatePicker x:Name="dpfilter" HorizontalAlignment="Left" Margin="437,98,0,0" VerticalAlignment="Top"/>
+        <Label Content="Filteren op datum " HorizontalAlignment="Left" Margin="326,98,0,0" VerticalAlignment="Top" Foreground="Black"/>
+        <Button x:Name="btnfilter" Content="filteren op datum " HorizontalAlignment="Left" Margin="588,98,0,0" VerticalAlignment="Top" Width="124" BorderBrush="White" Background="White" Height="26" Click="btnfilter_Click" RenderTransformOrigin="0.963,0.665"/>
+        <Button x:Name="btnafspraak" Content="Terug naar het begin" HorizontalAlignment="Left" Margin="612,10,0,0" VerticalAlignment="Top" Width="158" Height="40" BorderBrush="White" Background="White" Click="btnafspraak_Click"/>
+        
+    </Grid>
+</Window>

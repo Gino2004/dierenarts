@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 12.5, 8.5" name="dierenarts">
+  <DataContextMoniker Name="/dierenartsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="80e08431-89c7-4317-a066-39e123c315eb" absoluteBounds="6.875, 1.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/dierenartsDataContext/baas_dier" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0fddf3b6-5d92-4446-9374-3d885d45fa04" absoluteBounds="6.89, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6c821845-2fc0-4550-8343-3b541b46c6ec" absoluteBounds="3.75, 1.375, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/dierenartsDataContext/baa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f5052a86-70f9-46a3-a9f5-724ca6d0e935" absoluteBounds="3.7649999999999997, 1.835, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(5.75 : 2.47199625651042); (6.875 : 2.47199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/dierenartsDataContext/baa/baa_baas_dier" />
+      <nodes>
+        <classShapeMoniker Id="6c821845-2fc0-4550-8343-3b541b46c6ec" />
+        <classShapeMoniker Id="80e08431-89c7-4317-a066-39e123c315eb" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="bf9e8c9e-8c23-4448-8d05-b9dea1c444ff" absoluteBounds="10.25, 4.375, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/dierenartsDataContext/afspraak" />
+      <nestedChildShapes>
+        <elementListCompartment Id="24b024a2-25ab-40d2-85b3-14e891ba6707" absoluteBounds="10.265, 4.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="02ba79a3-0303-42dd-8bb3-9c9c24b25428" absoluteBounds="10, 1.875, 2, 1.3862939453125">
+      <DataClassMoniker Name="/dierenartsDataContext/dier" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2222e786-5694-4705-9b13-c5c1044eaca3" absoluteBounds="10.015, 2.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(10 : 2.47199625651042); (8.875 : 2.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dierenartsDataContext/dier/dier_baas_dier" />
+      <nodes>
+        <classShapeMoniker Id="02ba79a3-0303-42dd-8bb3-9c9c24b25428" />
+        <classShapeMoniker Id="80e08431-89c7-4317-a066-39e123c315eb" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(11.125 : 3.2612939453125); (11.125 : 4.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dierenartsDataContext/dier/dier_afspraak" />
+      <nodes>
+        <classShapeMoniker Id="02ba79a3-0303-42dd-8bb3-9c9c24b25428" />
+        <classShapeMoniker Id="bf9e8c9e-8c23-4448-8d05-b9dea1c444ff" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dierendb" Class="dierenartsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(local)\SQLEXPRESS;Initial Catalog=dierendb;Integrated Security=True" SettingsObjectName="dierenarts.Properties.Settings" SettingsPropertyName="dierendbConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.baas_dier" Member="baas_diers">
+    <Type Name="baas_dier">
+      <Column Name="baasid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="dierid" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="baa_baas_dier" Member="baa" ThisKey="baasid" OtherKey="baasid" Type="baa" IsForeignKey="true" />
+      <Association Name="dier_baas_dier" Member="dier" ThisKey="dierid" OtherKey="dierid" Type="dier" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.baas" Member="baas">
+    <Type Name="baa">
+      <Column Name="baasid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="voornaam" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="achternaam" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="adres" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="postcode" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="woonplaats" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="telefoon" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Association Name="baa_baas_dier" Member="baas_diers" ThisKey="baasid" OtherKey="baasid" Type="baas_dier" Cardinality="One" />
+    </Type>
+  </Table>
+  <Table Name="dbo.afspraak" Member="afspraaks">
+    <Type Name="afspraak">
+      <Column Name="afspraakid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="datum" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="tijd" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="afspraaksoort" Type="System.String" DbType="NChar(50)" CanBeNull="true" />
+      <Column Name="dierid" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="dier_afspraak" Member="dier" ThisKey="dierid" OtherKey="dierid" Type="dier" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.dier" Member="diers">
+    <Type Name="dier">
+      <Column Name="dierid" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="naam" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="diersoort" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Association Name="dier_baas_dier" Member="baas_diers" ThisKey="dierid" OtherKey="dierid" Type="baas_dier" Cardinality="One" />
+      <Association Name="dier_afspraak" Member="afspraaks" ThisKey="dierid" OtherKey="dierid" Type="afspraak" />
+    </Type>
+  </Table>
+</Database>
